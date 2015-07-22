@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Uecommerce
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Uecommerce EULA.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.uecommerce.com.br/
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade the extension
+ * to newer versions in the future. If you wish to customize the extension
+ * for your needs please refer to http://www.uecommerce.com.br/ for more information
+ *
+ * @category   Uecommerce
+ * @package    Uecommerce_Deploy
+ * @copyright  Copyright (c) 2012 Uecommerce (http://www.uecommerce.com.br/)
+ * @license    http://www.uecommerce.com.br/
+ */
+
+/**
+ * Deploy
+ *
+ * @category   Uecommerce
+ * @package    Uecommerce_Deploy
+ * @author     Uecommerce Dev Team
+ */
+-->
+
+<config>
+    <modules>
+        <Uecommerce_Deploy>
+            <version>0.1.0</version>
+        </Uecommerce_Deploy>
+    </modules>
+    <global>
+        <models>
+            <uecommerce_deploy>
+                <class>Uecommerce_Deploy_Model</class>
+            </uecommerce_deploy>
+        </models>
+        <helpers>
+            <uecommerce_deploy>
+                <class>Uecommerce_Deploy_Helper</class>
+            </uecommerce_deploy>
+        </helpers>
+    </global>
+    <frontend>
+        <routers>
+            <uecommerce_deploy>
+                <use>standard</use>
+                <args>
+                    <module>Uecommerce_Deploy</module>
+                    <frontName>deploy</frontName>
+                </args>
+            </uecommerce_deploy>
+        </routers>
+    </frontend>
+    <default>
+        <uecommerce_deploy>
+            <config>
+                <active>1</active>
+            </config>
+            <bitbucket>
+                <logfile>Bitbucket_Deploy.log</logfile>
+                <branch>master</branch>
+            </bitbucket>
+        </uecommerce_deploy>
+    </default>
+</config>

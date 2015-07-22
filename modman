@@ -1,0 +1,4 @@
+# app/code
+app/code/community/Uecommerce/Deploy    app/code/community/Uecommerce/Deploy
+# app/etc
+app/etc/modules/Uecommerce_Deploy.xml   app/etc/modules/Uecommerce_Deploy.xml
