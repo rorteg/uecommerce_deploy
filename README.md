@@ -18,7 +18,8 @@ Build Status
 Installation
 ------------
 There are two ways of obtaining the extension:    
-    *Use [Module Manager](https://github.com/colinmollenhour/modman) 
+    * Use [Module Manager](https://github.com/colinmollenhour/modman)
+
     ```bash
     modman clone https://github.com/rorteg/uecommerce_deploy.git
     ```
