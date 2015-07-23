@@ -129,7 +129,9 @@ abstract class Uecommerce_Deploy_Model_Abstract {
      * @return \Uecommerce_Deploy_Model_Abstract
      */
     public function logService($message) {
-        $this->getHelper()->logService($message, $this->getServiceName());
+        if($this->getConfig('config/active_log')){
+            $this->getHelper()->logService($message, $this->getServiceName());
+        }
         return $this;
     }
 

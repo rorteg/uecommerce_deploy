@@ -37,7 +37,7 @@ class Uecommerce_Deploy_BitbucketController extends Mage_Core_Controller_Front_A
          */
         $bitbucket = Mage::getModel('uecommerce_deploy/bitbucket');
         
-        if(!$bitbucket->getConfig('config/active')){
+        if(!$bitbucket->getConfig('config/active') || !$bitbucket->getConfig('bitbucket/active')){
             $this->noRouteAction();
             return false;
         }

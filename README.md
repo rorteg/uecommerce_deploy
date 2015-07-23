@@ -4,6 +4,7 @@ Magento Module for Automatic Deployment with Git
 ================================================
 
 Magento module that provides functionality for automated deployment through services like bitbucket, Github, etc ... [POST].
+IMPORTANT: This module works only if this server is already configured and updated with your git repository.
 
 System Requirements
 -------------------
@@ -22,6 +23,8 @@ There are two ways of obtaining the extension:
 ```bash
 modman clone https://github.com/rorteg/uecommerce_deploy.git
 ```
+
+    * (TODO) composer
 
 Usage Bitbucket
 ---------------
