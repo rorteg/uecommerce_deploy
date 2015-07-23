@@ -21,6 +21,5 @@ before_script:
     # Installing module
     - cd $MAGE_DIR && modman init && modman clone https://github.com/rorteg/uecommerce_deploy.git
 script:
-    - MAGE_DIR=tests/magento
     # Run test
-    - $MAGE_DIR/tests/phpunit.phar ../app/code/community/Uecommerce/Deploy
+    - tests/phpunit.phar ../app/code/community/Uecommerce/Deploy
