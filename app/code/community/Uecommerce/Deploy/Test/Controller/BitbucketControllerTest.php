@@ -32,20 +32,11 @@ class Uecommerce_Deploy_Test_Controller_BitbucketControllerTest extends Codex_Xt
 
     
     public function testPayloadPost() {
-        $this->isSupported();
+        
         $this->dispatch('/deploy/bitbucket', array(), array(
             'payload' => json_encode(array())
         ));
         $this->assertEquals(array(), json_decode(Mage::app()->getRequest()->getPost('payload')));
-    }
-
-    protected function isSupported() {
-        if (!version_compare(Mage::getVersion(), '1.8', '>=')) {
-            echo '** Codex_Xtest for now only supports version 1.9.x **';
-            $this->markTestSkipped(
-                    '*Codex_Xtest does not support this Magento Version*'
-            );
-        }
     }
 
 }

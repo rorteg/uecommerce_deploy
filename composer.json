@@ -1,0 +1,40 @@
+{
+    "name":"uecommerce/deploy",
+    "type":"magento-module",
+    "licence":"MIT",
+    "description":"Simple Magento auto deploy",
+    "homepage":"http://uecommerce.com.br",
+    "repositories":[
+        {
+            "type":"git",
+            "url":"https://bitbucket.org/uecommerce/uecommerce_deploy.git"
+        }
+    ],
+    "keywords":[
+        "magento",
+        "deploy",
+        "development",
+        "extension",
+        "module"
+    ],
+    "authors":[
+        {
+            "name":"Rafael Ortega Bueno",
+            "email":"rafael@uecommerce.com.br",
+            "homepage":"http://uecommerce.com.br",
+            "role":"Developer"
+        },
+        {
+            "name":"Jonathan Ribas",
+            "email":"jonathan@uecommerce.com.br",
+            "homepage":"http://uecommerce.com.br",
+            "role":"Developer"
+        }
+    ],
+    "require":{
+        "php":">=5.3.0"
+    },
+    "suggest":{
+        "magento-hackathon/magento-composer-installer":"*"
+    }
+}
