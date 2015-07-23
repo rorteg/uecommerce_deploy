@@ -32,6 +32,9 @@ class Uecommerce_Deploy_BitbucketController extends Mage_Core_Controller_Front_A
 {
     public function indexAction(){
         
+        /**
+         * @var $bitbucket \Uecommerce_Deploy_Model_Bitbucket
+         */
         $bitbucket = Mage::getModel('uecommerce_deploy/bitbucket');
         
         if(!$bitbucket->getConfig('config/active')){
@@ -40,14 +43,14 @@ class Uecommerce_Deploy_BitbucketController extends Mage_Core_Controller_Front_A
         }
         
         if(!$this->getRequest()->isPost()){
-            $this->getHelper()->logError($this->__('Unexpected Access.'), true);
+            $bitbucket->logError($this->__('Unexpected Access.'), true);
             $this->noRouteAction();
             return false;
         }
         $post = $this->getRequest()->getPost();
         
         if(!array_key_exists('payload', $post)){
-            $this->getHelper()->logError($this->__('No payload present. A BitBucket POST payload is required to deploy from this script.'));
+            $bitbucket->logError($this->__('No payload present. A BitBucket POST payload is required to deploy from this script.'));
             $this->noRouteAction();
             return false;
         }
@@ -56,14 +59,4 @@ class Uecommerce_Deploy_BitbucketController extends Mage_Core_Controller_Front_A
         
     }
     
-    /**
-     * Get Helper Data
-     * @return Uecommerce_Deploy_Helper_Data
-     */
-    public function getHelper(){
-        return Mage::helper('uecommerce_deploy');
-    }
-    
-    
-   
 }
