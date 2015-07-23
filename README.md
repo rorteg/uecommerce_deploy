@@ -1,7 +1,7 @@
 <a href="http://www.uecommerce.com.br">![Uecommerce](http://www.uecommerce.com.br/wp-content/uploads/2012/11/logo2.gif)</a>
 
-Magento Module for Automatic Deployment
-===================
+Magento Module for Automatic Deployment with Git
+================================================
 
 Magento module that provides functionality for automated deployment through services like bitbucket, Github, etc ... [POST].
 
@@ -32,5 +32,6 @@ Usage Bitbucket
     * Change the branch if necessary (in staging environments).
 
 Features:
+---------
 * Bitbucket integration
 * (TODO) Github integration
