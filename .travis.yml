@@ -21,7 +21,7 @@ before_script:
     # Installing module
     - cd $MAGE_DIR && modman init && modman clone https://github.com/rorteg/uecommerce_deploy.git
     # Change permissions
-    - cd $MAGE_DIR && chmod +x tests/phpunit.phar
+    - chmod +x tests/phpunit.phar
 script:
     # Run test
     - tests/phpunit.phar ../app/code/community/Uecommerce/Deploy
