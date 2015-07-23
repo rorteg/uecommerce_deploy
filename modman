@@ -5,4 +5,3 @@ app/etc/modules/Uecommerce_Deploy.xml   app/etc/modules/Uecommerce_Deploy.xml
 
 # Run shell clone dependences
 @shell cd $PROJECT && modman clone https://rorteg@bitbucket.org/uecommerce/uecommerce_base.git
-@shell cd $PROJECT && modman clone https://github.com/schmengler/Xtest.git

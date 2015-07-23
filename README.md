@@ -8,7 +8,7 @@ Magento Auto Deploy
 System Requirements
 -------------------
 * PHP 5.3 or higher
-* Magento CE1.4.x-1.7.x-1.8.x-1.9.x
+* Magento CE1.7.x-1.8.x-1.9.x
 
 Build Status
 ------------
