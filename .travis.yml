@@ -16,8 +16,10 @@ before_script:
     - composer install
     # Installing magento version with prepared DB dump
     - bin/mage-ci install $MAGE_DIR $MAGE magento -c -r http://mage-ci.ecomdev.org
+    # Installing modman
+    - bash < <(curl -s -L https://raw.github.com/colinmollenhour/modman/master/modman-installer) && source ~/.profile
     # Installing module
-    - cd $MAGE_DIR && modman clone git@github.com:rorteg/uecommerce_deploy.git
+    - cd $MAGE_DIR && modman init && modman clone git@github.com:rorteg/uecommerce_deploy.git
 script:
     # Run test
     - $MAGE_DIR/tests/phpunit.phar ../app/code/community/Uecommerce/Deploy
