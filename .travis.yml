@@ -17,7 +17,7 @@ before_script:
     # Installing magento version with prepared DB dump
     - bin/mage-ci install $MAGE_DIR $MAGE magento -c -r http://mage-ci.ecomdev.org
     # Installing module
-    - cd $MAGE_DIR modman clone git@github.com:rorteg/uecommerce_deploy.git
+    - cd $MAGE_DIR && modman clone git@github.com:rorteg/uecommerce_deploy.git
 script:
     # Run test
-    - tests/magento/tests/phpunit.phar ../app/code/community/Uecommerce/Deploy
+    - $MAGE_DIR/tests/phpunit.phar ../app/code/community/Uecommerce/Deploy
