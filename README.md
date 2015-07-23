@@ -13,3 +13,4 @@ System Requirements
 Build Status
 ------------
 * Latest Release: [![Master Branch](https://travis-ci.org/rorteg/uecommerce_deploy.png?branch=master)](https://travis-ci.org/rorteg/uecommerce_deploy)
+* Development Branch: [![Development Branch](https://travis-ci.org/rorteg/uecommerce_deploy.png?branch=develop)](https://travis-ci.org/rorteg/uecommerce_deploy)
