@@ -23,7 +23,6 @@ There are two ways of obtaining the extension:
 ```bash
 modman clone https://github.com/rorteg/uecommerce_deploy.git
 ```
-    * (TODO) composer
 
     * (TODO) composer
 
