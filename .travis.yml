@@ -20,6 +20,8 @@ before_script:
     - bash < <(curl -s -L https://raw.github.com/colinmollenhour/modman/master/modman-installer) && source ~/.profile
     # Installing module
     - cd $MAGE_DIR && modman init && modman clone https://github.com/rorteg/uecommerce_deploy.git
+    # Change permissions
+    - cd $MAGE_DIR && chmod +x tests/phpunit.phar
 script:
     # Run test
     - tests/phpunit.phar ../app/code/community/Uecommerce/Deploy
