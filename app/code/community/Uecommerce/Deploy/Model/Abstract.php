@@ -27,6 +27,8 @@
  * @category   Uecommerce
  * @package    Uecommerce_Deploy
  * @author     Uecommerce Dev Team
+ * @uses \Uecommerce_Deploy_Model_Contracts_ServiceInterface method getServiceName()
+ * @method string getServiceName() Returns the service name in lowercase
  */
 abstract class Uecommerce_Deploy_Model_Abstract {
 
@@ -138,7 +140,7 @@ abstract class Uecommerce_Deploy_Model_Abstract {
      * @return \Uecommerce_Deploy_Model_Abstract
      */
     public function logError($message, $displayIp = false) {
-        $this->getHelper()->logError($message, $displayIp);
+        $this->getHelper()->logError(ucfirst($this->getServiceName()).': '.$message, $displayIp);
         return $this;
     }
 
