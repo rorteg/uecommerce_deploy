@@ -7,6 +7,5 @@
     },
     "extra":{
         "magento-root-dir":"tests/magento"
-    }
-    
+    }    
 }
