@@ -15,7 +15,7 @@ before_script:
     # Installing dependencies
     - composer install
     # Installing magento version with prepared DB dump
-    - bin/mage-ci install $MAGE_DIR $MAGE magento -c -r http://mage-ci.ecomdev.org
+    - bin/mage-ci install $MAGE_DIR $MAGE magento -c http://mage-ci.ecomdev.org
     # Installing modman
     - bash < <(curl -s -L https://raw.github.com/colinmollenhour/modman/master/modman-installer) && source ~/.profile
     # Installing module
