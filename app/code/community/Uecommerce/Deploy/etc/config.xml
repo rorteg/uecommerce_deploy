@@ -65,6 +65,7 @@
                 <active>1</active>
             </config>
             <bitbucket>
+                <active>1</active>
                 <logfile>Bitbucket_Deploy.log</logfile>
                 <branch>master</branch>
             </bitbucket>
