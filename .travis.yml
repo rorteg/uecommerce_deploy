@@ -27,5 +27,4 @@ before_script:
 script:
     # Run test
     - cd tests && php phpunit.phar ../app/code/community/Uecommerce/Deploy/
-    # cat error log if exists
-    - cat ../var/log/Bitbucket_Error.log
+    

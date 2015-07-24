@@ -30,6 +30,8 @@
  */
 class Uecommerce_Deploy_Test_Controller_BitbucketControllerTest extends Codex_Xtest_Xtest_Unit_Frontend {
 
+   
+    
     
     public function testPayloadPost() {
         
@@ -37,6 +39,7 @@ class Uecommerce_Deploy_Test_Controller_BitbucketControllerTest extends Codex_Xt
             'payload' => json_encode(array())
         ));
         $this->assertEquals(array(), json_decode(Mage::app()->getRequest()->getPost('payload')));
+        
     }
 
 }
