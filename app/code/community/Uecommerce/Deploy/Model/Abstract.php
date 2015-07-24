@@ -178,7 +178,7 @@ abstract class Uecommerce_Deploy_Model_Abstract {
     public function execute($payload = null) {
         try {
 
-            if (!$this->getConfig('config/active')) {
+            if (!$this->getConfig('config/active') || !$this->getConfig('bitbucket/active')) {
                 return false;
             }
 
