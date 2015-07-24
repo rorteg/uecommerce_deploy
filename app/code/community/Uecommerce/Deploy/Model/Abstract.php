@@ -196,6 +196,12 @@ abstract class Uecommerce_Deploy_Model_Abstract {
             }
             
             $this->logService($messages);
+            
+            if(!is_null($payload)){
+                $this->logService(json_decode($payload));
+            }
+            
+            
 
             return $this;
         } catch (Exception $e) {
@@ -216,11 +222,7 @@ abstract class Uecommerce_Deploy_Model_Abstract {
         $messages .= PHP_EOL . ' - ' . $command->getMessage() . PHP_EOL;
         $messages .= 'INPUT: ' . $command->getCommand() . PHP_EOL;
         $messages .= 'OUTPUT: ' . print_r($command->getOutput()) . PHP_EOL . PHP_EOL;
-        
-        if(!is_null($payload)){
-            $this->logService(json_decode($payload));
-        }
-        
+               
         return $messages;
     }
 

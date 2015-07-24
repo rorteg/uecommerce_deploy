@@ -31,10 +31,7 @@
 class Uecommerce_Deploy_Model_Bitbucket extends Uecommerce_Deploy_Model_Abstract 
 implements Uecommerce_Deploy_Model_Contracts_ServiceInterface
 {
-    public function __construct(){
-        parent::__construct();
-    }
-    
+        
     /**
      * Implements interface
      * 

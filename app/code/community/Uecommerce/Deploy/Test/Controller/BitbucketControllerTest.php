@@ -32,14 +32,28 @@ class Uecommerce_Deploy_Test_Controller_BitbucketControllerTest extends Codex_Xt
 
    
     
-    
-    public function testPayloadPost() {
+    /**
+     * @dataProvider postBitbucket
+     */
+    public function testPayloadPost($post, $expected) {
         
         $this->dispatch('/deploy/bitbucket', array(), array(
-            'payload' => json_encode(array())
+            'payload' => $post
         ));
-        $this->assertEquals(array(), json_decode(Mage::app()->getRequest()->getPost('payload')));
         
+        $this->assertNotContains($expected, $this->getResponseBody());
+        
+    }
+    
+    public function postBitbucket(){
+        $post = new stdClass();
+        $post->repository = new stdClass();
+        $post->commits = new stdClass();
+        $post->canon_url = 'https://bitbucket.org';
+        return array(
+            array(json_encode($post), 'cms-no-route')
+            
+        );
     }
 
 }
