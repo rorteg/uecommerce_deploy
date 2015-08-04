@@ -31,9 +31,24 @@
 class Uecommerce_Deploy_Model_Observer
 {
     public function handle_adminSystemConfigChanged($observer){
-        if(!Mage::helper('uecommerce_deploy')->isMethodEnabled('exec')){
-            Mage::getSingleton('core/session')->addError(Mage::helper('uecommerce_deploy')->__('The method "exec" of php is disabled, the module will not function correctly.'));
+        /**
+         * @var $helper Uecommerce_Deploy_Helper_Data
+         */
+        $helper = Mage::helper('uecommerce_deploy');
+        
+        if(!$helper->isMethodEnabled('exec') && !$helper->isMethodEnabled('shell_exec')){
+            Mage::getSingleton('core/session')->addError($helper->__('The method "exec" and "shell_exec" of php is disabled or not exists, the module will not function correctly.'));
+        
+            return false;
         }
+        
+        if(strpos(shell_exec('git --version'), 'git version') === false){
+            Mage::getSingleton('core/session')->addError($helper->__('Git is not installed on this server'));
+            return false;
+        }
+        
+        
+        
     }
     
     

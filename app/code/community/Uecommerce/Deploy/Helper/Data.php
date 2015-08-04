@@ -114,7 +114,11 @@ class Uecommerce_Deploy_Helper_Data extends Mage_Core_Helper_Abstract
      */
     public function isMethodEnabled($function){
         $disabled = explode(',', ini_get('disable_functions'));
-        return !in_array($function, $disabled);
+        $return =  !in_array($function, $disabled);
+        if($return){
+            $return = function_exists($function);
+        }
+        return $return;
     }
 
 }

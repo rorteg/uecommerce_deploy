@@ -69,8 +69,8 @@ abstract class Uecommerce_Deploy_Model_Abstract {
          */
         $helper = Mage::helper('uecommerce_deploy');
         
-        if(!$helper->isMethodEnabled('exec')){
-            $this->logError($helper->__('The method "exec" of php is disabled, the module will not function correctly.'));
+        if(!$helper->isMethodEnabled('exec') && !$helper->isMethodEnabled('shell_exec')){
+            $this->logError($helper->__('The method "exec" and "shell_exec" of php is disabled or not exists, the module will not function correctly.'));
             return false;
         }
         $this->_branch = $this->getBranchToDeploy();
@@ -197,7 +197,7 @@ abstract class Uecommerce_Deploy_Model_Abstract {
             $messages = '';
             $output = '';
             foreach ($gitCommands as $command) {
-                exec($command->getCommand(), $output);
+                $output = $this->shellExec($command->getCommand());
                 $command->setOutput($output);
                 $messages .= PHP_EOL . '* ===============*COMMANDS*=============== *' . PHP_EOL;
                 $messages .= $this->formatMessages($command, $payload);
@@ -207,7 +207,7 @@ abstract class Uecommerce_Deploy_Model_Abstract {
             $this->logService($messages);
             
             if(!is_null($payload)){
-                $this->logService(json_decode($payload));
+                $this->logService($payload);
             }
             
             
@@ -233,6 +233,24 @@ abstract class Uecommerce_Deploy_Model_Abstract {
         $messages .= 'OUTPUT: ' . print_r($command->getOutput()) . PHP_EOL . PHP_EOL;
                
         return $messages;
+    }
+    
+    public function shellExec($command){
+        /**
+         * @var $helper Uecommerce_Deploy_Helper_Data
+         */
+        $helper = Mage::helper('uecommerce_deploy');
+        
+        
+        if($helper->isMethodEnabled('shell_exec')){
+            return shell_exec($command);
+        }
+        
+        if($helper->isMethodEnabled('exec')){
+            return exec($command);
+        }
+        
+        $this->logError($helper->__('Could not run, does not exist or is not enabled the exec and shell_exec methods'));
     }
 
 }
