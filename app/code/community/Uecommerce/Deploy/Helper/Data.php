@@ -106,5 +106,15 @@ class Uecommerce_Deploy_Helper_Data extends Mage_Core_Helper_Abstract
         );
         
     }
+    
+    /**
+     * Check if native method enabled 
+     * @param string $function Native function name
+     * @return bollean
+     */
+    public function isMethodEnabled($function){
+        $disabled = explode(',', ini_get('disable_functions'));
+        return !in_array($function, $disabled);
+    }
 
 }

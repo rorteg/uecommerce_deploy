@@ -64,6 +64,10 @@ abstract class Uecommerce_Deploy_Model_Abstract {
         if (!$this->getConfig('config/active')) {
             return false;
         }
+        if(!Mage::helper('uecommerce_deploy')->isMethodEnabled('exec')){
+            $this->logError(Mage::helper('uecommerce_deploy')->__('The method "exec" of php is disabled, the module will not function correctly.'));
+            return false;
+        }
         $this->_branch = $this->getBranchToDeploy();
         $this->prepareDefaultCommands();
     }

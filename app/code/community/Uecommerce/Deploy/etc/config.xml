@@ -59,6 +59,19 @@
             </uecommerce_deploy>
         </routers>
     </frontend>
+    <adminhtml>
+        <events>
+            <admin_system_config_changed_section_uecommerce_deploy>
+                <observers>
+                    <uecommerce_deploy>
+                        <type>singleton</type>
+                        <class>uecommerce_deploy/observer</class>
+                        <method>handle_adminSystemConfigChanged</method>
+                    </uecommerce_deploy>
+                </observers>
+            </admin_system_config_changed_section_uecommerce_deploy>
+        </events>
+    </adminhtml>
     <default>
         <uecommerce_deploy>
             <config>
