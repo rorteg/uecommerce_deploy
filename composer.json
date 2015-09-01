@@ -6,7 +6,7 @@
     "homepage":"http://uecommerce.com.br",
     "repositories":[
         {
-            "type":"git",
+            "type":"vcs",
             "url":"https://bitbucket.org/uecommerce/uecommerce_deploy.git"
         }
     ],
