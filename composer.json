@@ -4,12 +4,6 @@
     "licence":"MIT",
     "description":"Simple Magento auto deploy",
     "homepage":"http://uecommerce.com.br",
-    "repositories":[
-        {
-            "type":"vcs",
-            "url":"https://bitbucket.org/uecommerce/uecommerce_deploy.git"
-        }
-    ],
     "keywords":[
         "magento",
         "deploy",
